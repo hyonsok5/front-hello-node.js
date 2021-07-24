@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title> In front of Hello Node.js Bcknd </title>
+	</head>
+	<body>
+		<div id="bckndMsg"></div>
+	</body>
+</html>
+
+	<script type="text/javascript">	
+		const Http = new XMLHttpRequest();
+		const url = "http://localhost"	
+		Http.open("GET",url);
+		Http.send();
+		Http.onreadystatechange=(e)=>{
+			console.log(Http.responseText);
+			document.getElementById("bckndMsg").innerText=Http.responseText;
+		}
+	</script>	
