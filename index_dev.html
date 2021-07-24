@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<ul>
-			<li> (PRD) Response from ... <br/>
+			<li> (Dev) Response from ... <br/>
 				<div id="bckndMsg">null</div>
 			</li>
 				
@@ -14,7 +14,7 @@
 
 	<script type="text/javascript">	
 		const Http = new XMLHttpRequest();
-		const url = "http://20.194.34.199:85"	
+		const url = "http://localhost:85"	
 		Http.open("GET",url);
 		Http.send();
 		Http.onreadystatechange=(e)=>{
