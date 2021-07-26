@@ -12,11 +12,16 @@
 		<div class="container" style="margin-top:100px;">
 			<ul class='list-group'>
 				<h1><li> (Prd) Response from ... <br/>
-					<h3><div id="bckndMsg">null</div></h3>
-				</li></h1>  
+					<ul>
+						<h3>
+							<li><div id="bckndMsg">null</div></li>
+							<li><div id="bckndMsgMysql">null</div></li>
+						</h3>
+					</ul>
+				</li></h1>    
 			</ul>	
 		</div>
-	</body>
+	</body>  
 </html>
 
 	<script type="text/javascript">	
@@ -26,6 +31,14 @@
 		Http.send();
 		Http.onreadystatechange=(e)=>{
 			console.log(Http.responseText);
-			document.getElementById("bckndMsg").innerText=Http.responseText;
-		}
+			  
+  			const Http2 = new XMLHttpRequest();
+			Http2.open("GET",url+'/chkMysql');
+			Http2.send();   
+			Http2.onreadystatechange=(e)=>{  
+				console.log(Http2.responseText);
+				document.getElementById("bckndMsg").innerText=Http.responseText;  
+				document.getElementById("bckndMsgMysql").innerText=Http2.responseText;
+			} 
+		}  
 	</script>	
